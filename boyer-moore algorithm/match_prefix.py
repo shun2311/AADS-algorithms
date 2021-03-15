@@ -10,5 +10,6 @@ def match_prefix(pat):
             mp_array[i] = mp_array[i+1]
     return mp_array
 
-pat = "aabaabcaxaabaabcy"
-print(match_prefix(pat))
+#pat = "acababacaba"
+#print(match_prefix(pat))
+#print(len(pat))

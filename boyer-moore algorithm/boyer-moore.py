@@ -20,16 +20,20 @@ def boyer_moore_algo(string, pat):
     while end<len(string):
         mismatch = scan.right_to_left(start, end, string, pat)
         char_index = ord(string[mismatch])-97
-        if mismatch == start - 1:
+        if mismatch == -1:
             shift_to = len(pat) - mp_array[1]
-            all_match.append(mismatch)
+            all_match.append(start)
         else:
-            bc_shift = max(1, mismatch - bc_array[char_index][mismatch])
+            if bc_array[char_index][mismatch] != -1:
+                bc_shift = max(1, mismatch - bc_array[char_index][mismatch])
+            else:
+                bc_shift = max(1, mismatch)
             gs_shift = good_suffix_shift(pat, mismatch, gs_array, mp_array)
             shift_to = max(bc_shift, gs_shift)
         start += shift_to
         end += shift_to
+    return all_match
 
-string =  "aabcbababsaskc"
-pattern = "cababab"
-boyer_moore_algo(string, pattern)
+string =  "aghtyabacaacababacabaca"
+pattern = "acababacaba"
+print(boyer_moore_algo(string, pattern))

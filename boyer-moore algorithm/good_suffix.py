@@ -14,8 +14,8 @@ def good_suffix_array(pat):
 
     return good_suffix_array
 
-pat = "aabcaabxaay"
-print(reverse_z_array(pat))
-gsa = good_suffix_array(pat)
-print(gsa)
+#pat = "aabcaabxaay"
+#print(reverse_z_array(pat))
+#gsa = good_suffix_array(pat)
+#print(gsa)
 #print("shift by "+str(good_suffix_shift(pat,8,gsa)))

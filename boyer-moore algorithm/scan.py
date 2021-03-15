@@ -4,4 +4,4 @@ def right_to_left(start,end,string,pat):
     for i in range(end, start-1, -1):
         if string[i]!=pat[i-start]:
             return i-start
-    return start-1
+    return -1
