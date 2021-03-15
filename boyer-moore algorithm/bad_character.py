@@ -1,9 +1,9 @@
 
 #preprocess to get R(x) values
-def generate_bad_char_table(pat):
+def generate_bad_char_matrix(pat):
     bad_char_table = []
-
-    for i in range(26):
+    size = 26
+    for i in range(size):
         bad_char_table.append([None]*len(pat))
 
     for i in range(len(pat)-1,-1,-1):
