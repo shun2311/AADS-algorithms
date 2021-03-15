@@ -14,10 +14,8 @@ def good_suffix_array(pat):
 
     return good_suffix_array
 
-def good_suffix_shift(pat, mismatch, good_suffix_array):
-    if good_suffix_array[mismatch+1] > 0:
-        return len(pat) - good_suffix_array[mismatch+1]
-
-pat = "aabacabacaba"
+pat = "aabcaabxaay"
+print(reverse_z_array(pat))
 gsa = good_suffix_array(pat)
-print("shift by "+str(good_suffix_shift(pat,8,gsa)))
+print(gsa)
+#print("shift by "+str(good_suffix_shift(pat,8,gsa)))
