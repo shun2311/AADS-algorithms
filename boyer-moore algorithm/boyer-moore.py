@@ -5,9 +5,9 @@ import match_prefix
 
 def good_suffix_shift(pat, mismatch, good_suffix_array, match_prefix_array):
     if good_suffix_array[mismatch+1] > 0:
-        return len(pat) - good_suffix_array[mismatch+1]
+        return len(pat) - 1 - good_suffix_array[mismatch+1]
     else:
-        return len(pat) - match_prefix_array[mismatch+1]
+        return len(pat) - 1 - match_prefix_array[mismatch+1]
 
 def boyer_moore_algo(string, pat):
     start = 0
